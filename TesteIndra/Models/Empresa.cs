@@ -9,11 +9,10 @@ namespace TesteIndra
     [Table("Empresa")]
     public partial class Empresa
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Empresa()
         {
-            Endereco = new HashSet<Endereco>();
-            Telefone = new HashSet<Telefone>();
+            Endereco = new List<Endereco>();
+            Telefone = new List<Telefone>();
         }
 
         [Key]
@@ -31,10 +30,13 @@ namespace TesteIndra
         [StringLength(120)]
         public string NomeRepresentante { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Endereco> Endereco { get; set; }
+     
+        public virtual List<Endereco> Endereco { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Telefone> Telefone { get; set; }
+       
+        public virtual List<Telefone> Telefone { get; set; }
+        
+       
+
     }
 }

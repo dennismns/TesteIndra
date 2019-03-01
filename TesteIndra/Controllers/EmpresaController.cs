@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TesteIndra;
+using TesteIndra.Models;
 
 namespace TesteIndra.Controllers
 {
@@ -16,8 +17,7 @@ namespace TesteIndra.Controllers
 
         // GET: Empresa
         public ActionResult Index()
-        {
-            
+        {         
             return View(db.Empresa.ToList());
         }
 
@@ -42,9 +42,6 @@ namespace TesteIndra.Controllers
             return View();
         }
 
-        // POST: Empresa/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdEmpresa,NomeEmpresa,CNPJ,NomeRepresentante")] Empresa empresa)
@@ -74,9 +71,7 @@ namespace TesteIndra.Controllers
             return View(empresa);
         }
 
-        // POST: Empresa/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdEmpresa,NomeEmpresa,CNPJ,NomeRepresentante")] Empresa empresa)

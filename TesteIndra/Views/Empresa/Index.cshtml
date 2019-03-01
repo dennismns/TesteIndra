@@ -20,10 +20,15 @@
         <th>
             @Html.DisplayNameFor(model => model.NomeRepresentante)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NomeRepresentante)
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.NomeEmpresa)
@@ -34,12 +39,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.NomeRepresentante)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpresa }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdEmpresa }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdEmpresa })
-        </td>
-    </tr>
-}
+
+       
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdEmpresa }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdEmpresa }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdEmpresa })
+            </td>
+        </tr>
+    }
 
 </table>
